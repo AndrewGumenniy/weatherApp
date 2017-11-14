@@ -1,0 +1,79 @@
+<main>
+  <div class="top-content">
+    <div class="wrap">
+      <span>Current conditions and forecast for 200000+ cities and any geo location</span>
+    </div>
+  </div>
+  <div class="search-block">
+    <div class="wrap">
+      
+      <div class="search-field">
+        <input type="text" ng-model="city" placeholder="Enter your city name..." ng-keypress="($event.which === 13)?searchCity():0"/>
+        <button class="search-button" type="button" ng-click="searchCity()" value="Search" ng-disabled="city == null" ><i class="fa fa-search" aria-hidden="true"></i> Search</button> 
+      </div>
+
+      <div class="city-list" >
+        <div class="item" ng-repeat="item in cityData.list">
+          <a data-ng-href="#/city/{{item.id}}">
+          <div  class="weather-image" ng-repeat="item in item.weather" ng-if="$first">
+            <img title="{{item.description}}" ng-src="images/weather icons/{{item.icon}}.png" alt="">  
+          </div>
+          <div class="weather-text-blocks">
+	          <div class="location">
+	            <span class="name">{{item.name}}</span>
+	            <span class="country">{{item.sys.country}}<img ng-src=" http://openweathermap.org/images/flags/{{item.sys.country|lowercase}}.png" alt=""></span>
+	            <object>
+	              <a target="_blank" ng-href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{item.coord.lat}}&lon={{item.coord.lon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map</a>
+              </object>
+	          </div>
+	          <div class="weather-indicators">
+  	          <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.main.temp| number:0}}</b>°C</span>
+  	          <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.main.humidity}}</b>%</span>
+  	          <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind.speed| number:1}}</b>m/s</span>
+	          </div>
+            </div>
+			    </a> 
+        </div> 
+        
+		    <div class="not-found" ng-if="cityData.list.length===0">
+				  Nothing found on your request
+			  </div>
+
+        <div class="forecast-examples" ng-hide="cityData.list.length>0">
+          <h2>Examples of weather forecast</h2>
+          <div  class="item" ng-repeat="city in cityArray">
+            <div  ng-repeat="item in city.list">
+              <a data-ng-href="#/city/{{item.id}}">
+                <div  class="weather-image" ng-repeat="item in item.weather" ng-if="$first">
+                  <img title="{{item.description}}" ng-src="images/weather icons/{{item.icon}}.png" alt="">
+                </div>
+                <div class="weather-text-blocks">
+                  <div class="location">
+                    <span class="name">{{item.name}}</span>
+                    <span class="country">{{item.sys.country}}<img ng-src=" http://openweathermap.org/images/flags/{{item.sys.country|lowercase}}.png" alt=""></span>
+                    <object>
+                      <a target="_blank" ng-href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{item.coord.lat}}&lon={{item.coord.lon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map </a>
+                    </object>
+                  </div>
+                  <div class="weather-indicators">
+                    <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.main.temp| number:0}}</b>°C</span>
+                    <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.main.humidity}}</b>%</span>
+                    <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind.speed| number:1}}</b>m/s</span>
+                  </div>
+                </div>
+              </a> 
+            </div> 
+          </div>
+        </div> 
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Weather Forecast Application 2017</span> 
+    <span>Powered by <img src="images/openweathermap-logo.png" alt="images/openweathermap-logo.png"><a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></span>
+  </div>
+</footer>

@@ -1,0 +1,93 @@
+<main>
+  <div class="wrap">
+    <div class="tabs" >
+    	<ul class="tabs-links">
+        <li ng-class="{ active: isSet(1) }" ng-click="setTab(1)"><i class="fa fa-cloud" aria-hidden="true"></i>Current weather</li>
+        <li ng-class="{ active: isSet(2) }" ng-click="setTab(2)"><i class="fa fa-calendar" aria-hidden="true"></i> 5 day / 3 hour forecast</li>
+      </ul>
+
+      <div class="tabs-content">	
+       	<div ng-show="isSet(1)">
+          <div class="current-wheather">
+            <div class="location">
+              <span class="name">{{cityForecast.city.name}}</span>
+              <span class="country">{{cityForecast.city.country}}<img ng-src=" http://openweathermap.org/images/flags/{{cityForecast.city.country|lowercase}}.png" alt=""></span>
+              <span class="map"><a target="_blank" ng-href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{cityForecast.city.coord.lat}}&lon={{cityForecast.city.coord.lon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map </a></span>
+            </div>
+            <div class="time">
+              <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>{{today | date:'d MMM  HH:mm'}}</span><span class="current-data">UTC</span>
+            </div>
+            <div class="wheather-characteristics" ng-if="$first" ng-repeat="item in cityForecast.list">
+              <div class="wheather-img" ng-repeat="item in item.weather">
+              <img title="{{item.description}}" ng-src="images/weather icons/{{item.icon}}.png" alt="">
+              <p> {{item.description}} </p>
+              </div>
+              <div class="temperature-block"> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.main.temp| number:0}}</b>°C</div>
+              <div class="other">
+                <div class="item">
+                  <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.main.humidity}}</b>%</span> 
+                  <p>Humidity</p>
+                </div>
+                <div class="item">
+                  <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind.speed| number:1}}</b>m/s</span>
+                  <p>Wind</p>
+                </div>
+                <div class="item">
+                  <span><i class="fa fa-cloud" aria-hidden="true"></i><b>{{item.clouds.all}}</b>%</span>
+                  <p>Cloudiness</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="city-list forecast-list oneday-list">
+            <div  ng-repeat="item in cityForecast.list" ng-if="$index < 9">
+              <div class="item">
+                <div class="time">
+                  {{item.dt + "000"|date : "HH:mm"}}
+                </div>
+                <div  class="weather-image" ng-repeat="item in item.weather" >
+                  <img title="{{item.description}}" ng-src="images/weather icons/{{item.icon}}.png" alt="">
+                </div>
+                <div class="weather-text-blocks">
+                  <div class="weather-indicators">
+                    <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.main.temp| number:0}}</b>°C</span>
+                    <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.main.humidity}}</b>%</span>
+                    <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind.speed| number:1}}</b>m/s</span>
+                    <span><i class="fa fa-cloud" aria-hidden="true"></i><b>{{item.clouds.all}}</b>%</span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div> 
+        </div>
+		    <div ng-show="isSet(2)">
+          <div class="city-list forecast-list">
+            <div  ng-repeat="item in cityForecast.list">
+              <div ng-if="$first" class="date-sign" >
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  {{ item.dt + "000" | date : "EEEE MMM d y" }} Today
+              </div>
+              <div class="date-sign" ng-if="(item.dt + '000'|date : 'HH:mm') =='02:00'">
+                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> {{ item.dt + "000" | date : "EEEE MMM d y" }}
+              </div>
+              <div class="item">
+                <div class="time">
+                  {{item.dt + "000"|date : "HH:mm"}}
+                </div>
+                <div  class="weather-image" ng-repeat="item in item.weather" >
+                  <img title="{{item.description}}" ng-src="images/weather icons/{{item.icon}}.png" alt="">
+                </div>
+                <div class="weather-text-blocks">
+                  <div class="weather-indicators">
+                    <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.main.temp| number:0}}</b>°C</span>
+                    <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.main.humidity}}</b>%</span>
+                    <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind.speed| number:1}}</b>m/s</span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div> 
+  	    </div>
+      </div>
+    </div>
+  </div>
+</main>
