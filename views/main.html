@@ -21,7 +21,7 @@
           <div class="weather-text-blocks">
 	          <div class="location">
 	            <span class="name">{{item.name}}</span>
-	            <span class="country">{{item.sys.country}}<img ng-src=" http://openweathermap.org/images/flags/{{item.sys.country|lowercase}}.png" alt=""></span>
+	            <span class="country">{{item.sys.country}}<img ng-src=" https://openweathermap.org/images/flags/{{item.sys.country|lowercase}}.png" alt=""></span>
 	            <object>
 	              <a target="_blank" ng-href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{item.coord.lat}}&lon={{item.coord.lon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map</a>
               </object>
