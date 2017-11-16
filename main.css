@@ -305,9 +305,6 @@ header a{
 	width: 48%;
 	margin-left: 2%;
 }
-.oneday-list .item, .oneday-list .weather-indicators{
-	width: 100%;
-}
 /*forecast-list*/
 .forecast-list{
 	margin-top: 15px;
@@ -372,6 +369,9 @@ header a{
 .location i, .weather-indicators i{
 	margin-right: 5px;
 	color: #245998;    
+}
+.oneday-list .item, .oneday-list .weather-indicators{
+	width: 100%;
 }
 /*footer*/
 footer{
