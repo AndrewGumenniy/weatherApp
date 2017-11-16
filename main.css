@@ -447,6 +447,7 @@ footer a{
 	.top-content h2 {
 		padding: 50px 30px;
 		line-height: 30px;
+		font-size: 24px;
 	}
 	.search-field input[type="text"] {
 	  width: 50%;
