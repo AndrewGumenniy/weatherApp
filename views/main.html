@@ -1,17 +1,15 @@
 <main>
   <div class="top-content">
     <div class="wrap">
-      <span>Current conditions and forecast for 200000+ cities and any geo location</span>
+      <h2>Current conditions and forecast for 200000+ cities and any geo location</h2>
     </div>
   </div>
-  <div class="search-block">
-    <div class="wrap">
-      
+  <div class="search-city-block">
+    <div class="wrap">    
       <div class="search-field">
         <input type="text" ng-model="city" placeholder="Enter your city name..." ng-keypress="($event.which === 13)?searchCity():0"/>
         <button class="search-button" type="button" ng-click="searchCity()" value="Search" ng-disabled="city == null" ><i class="fa fa-search" aria-hidden="true"></i> Search</button> 
       </div>
-
       <div class="city-list" >
         <div class="item" ng-repeat="item in cityData.list">
           <a data-ng-href="#/city/{{item.id}}">
@@ -34,11 +32,9 @@
             </div>
 			    </a> 
         </div> 
-        
 		    <div class="not-found" ng-if="cityData.list.length===0">
 				  Nothing found on your request
 			  </div>
-
         <div class="forecast-examples" ng-hide="cityData.list.length>0">
           <h2>Examples of weather forecast</h2>
           <div  class="item" ng-repeat="city in cityArray">
@@ -65,15 +61,7 @@
             </div> 
           </div>
         </div> 
-
       </div>
     </div>
   </div>
 </main>
-
-<footer>
-  <div class="wrap">
-    <span>Weather Forecast Application 2017</span> 
-    <span>Powered by <img src="images/openweathermap-logo.png" alt="images/openweathermap-logo.png"><a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></span>
-  </div>
-</footer>

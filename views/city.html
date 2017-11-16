@@ -5,7 +5,6 @@
         <li ng-class="{ active: isSet(1) }" ng-click="setTab(1)"><i class="fa fa-cloud" aria-hidden="true"></i>Current weather</li>
         <li ng-class="{ active: isSet(2) }" ng-click="setTab(2)"><i class="fa fa-calendar" aria-hidden="true"></i> 5 day / 3 hour forecast</li>
       </ul>
-
       <div class="tabs-content">	
        	<div ng-show="isSet(1)">
           <div class="current-wheather">
@@ -64,10 +63,12 @@
           <div class="city-list forecast-list">
             <div  ng-repeat="item in cityForecast.list">
               <div ng-if="$first" class="date-sign" >
-                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  {{ item.dt + "000" | date : "EEEE MMM d y" }} Today
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  
+                {{ item.dt + "000" | date : "EEEE MMM d y" }} Today
               </div>
               <div class="date-sign" ng-if="(item.dt + '000'|date : 'HH:mm') =='02:00'">
-                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> {{ item.dt + "000" | date : "EEEE MMM d y" }}
+                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> 
+                {{ item.dt + "000" | date : "EEEE MMM d y" }}
               </div>
               <div class="item">
                 <div class="time">

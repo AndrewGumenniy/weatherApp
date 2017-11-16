@@ -12,9 +12,9 @@ body {
 }
 .wrap {
     position: relative;
+    margin: 0 auto;
     width: 1200px;
     height: 100%;
-    margin: 0 auto;
 }
 /*header*/
 header {
@@ -25,14 +25,14 @@ header {
 	font-weight: 600;
 }
 .header-logo img{
-	width: 50px;
 	display: inline-block;
+	width: 50px;
 	vertical-align: middle;
 }
 .header-logo h1{
-	vertical-align: middle;
 	display: inline-block;
 	margin-left: 7px;
+	vertical-align: middle;
 	font-size: 26px;
 }
 header a{
@@ -40,6 +40,7 @@ header a{
 	color: white;
 }
 /*main*/
+/*top-content*/
 .top-content{
 	z-index: -2;
 	display: block;
@@ -49,16 +50,19 @@ header a{
 	background-size: cover;
 	text-align: center;
 	color:white;
-	font-size: 37px;
 }
-.top-content span{
-	vertical-align: middle;
+.top-content h2{
 	display: inline-block;
+	font-size: 37px;
+	vertical-align: middle;
 	line-height: 400px;
+	font-weight:500;
 }
-.search-block{
+/*search-city-block*/
+.search-city-block{
 	text-align: center;
 }
+/*search-field with button*/
 .search-field{
 	display: inline-block;
 	margin-top: 30px;
@@ -66,52 +70,43 @@ header a{
 }
 .search-field input[type=text]{
 	width: 300px;
-	border: 2px solid rgb(36, 89, 153);
 	padding: 12px;
+	border: 2px solid rgb(36, 89, 153);
 	outline: none;
 	font-size: 20px;
 }
 .search-button{
+	margin-left: -7px;
+	padding: 12px 12px 13px;
 	background: rgb(36, 89, 153);
 	color: white;
-	padding: 12px 12px 13px;
 	font-size: 22px;
-	margin-left: -7px;
 	font-weight: 500;
 }
 .search-button i{
-	font-size: 19px;
-	/* line-height: 17px; */
+	font-size: 19px;	/* line-height: 17px; */
 }
 .search-button:hover{
 	cursor:pointer;
 }
+/*city-list*/
+.city-list{
+	margin-bottom: 60px;
+}
+.city-list .not-found{
+	font-size: 20px;
+	padding: 10px 0;
+}
 .city-list .item{
-	/* margin-right: 10px; */
 	display: inline-block;
-	/* clear: both; */
-	height: 100px;
-	/* width: 500px; */
-	/* border: 1px solid rgba(46, 39, 39, 0.2); */
-	/* box-shadow: 0 0 2px 0px rgba(51, 51, 51, 0.32); */
 	margin: 15px 10px 0;
-	/* padding: 10px; */
-	/* border-radius: 5px; */
+	height: 100px;
 	background: rgb(199, 212, 236);
 	transition:0.5s;
 }
-/*.city-list .item a:first-of-type{
-	display: inline-block;
-	height: 100px;
-	width: 100%;
-}*/
 .city-list .item:hover{
 	box-shadow: 0 0 10px 0px grey;
 	cursor:pointer;
-}
-.city-list{
-	/*width: 65%;
-	margin: 0 auto;*/
 }
 .city-list .item .weather-image img{
 	width: 68px;
@@ -135,17 +130,14 @@ header a{
 	padding: 0px 15px 0px 15px;
 }
 .city-list .item .location{
+	width: 100%;
 	height: 50px;
 	text-align: left;
-	/* padding: 5px; */
-	width: 100%;
-	/* display: inline-block; */
 }
 .city-list .item .location .name{
 	color: rgb(36, 89, 153);
 	font-weight: 600;
 	font-size: 35px;
-	/* margin-left: -26px; */
 }
 .city-list .item .location .country{
 	color: white;
@@ -155,100 +147,23 @@ header a{
 .city-list .item .location .country img{
 	margin-left: 5px;
 }
-.forecast-list{
-	margin-top: 15px;
+.city-list h2{
+	font-size: 35px;
+	color:#245999;
 }
-.forecast-list .item .time {
-    float: left;
-    line-height: 65px;
-    font-size: 21px;
-    padding: 0 10px;
-    color: #245998;
-    font-weight: bold;
-}
-.current-data{
-	
-	font-size: 24px;
-	color: rgb(36, 89, 153);
-	display: inline-block;
-	margin-left: 3px;
-}
-.forecast-list .item{
-	display: block;
-	width: 500px;
-	height: 65px;
-	margin: 3px auto 0;
-}
-.date-sign {
-    display: block;
-   
-    width: 500px;
-    margin: 10px auto 5px;
-    color: #fff;
-    font-size: 19px;
-    font-weight: bold;
-    padding: 10px 0;
-    background: #193d69;
-}
-.forecast-list .weather-image{
-	height: 65px;
-	width: 90px;
-}
-.forecast-list .item .weather-image img {
-    width: 55px;
-    padding-top: 7px;
-}
-.forecast-list .weather-indicators {
-    line-height: 65px;
-}
-.forecast-list .weather-text-blocks { 
-    height: 65px;
-}
-.forecast-list .item:hover{
-	box-shadow: none;
-	cursor: default;
-}
-/*.city-list .item .location i{
-	
-font-size: 18px;
-	
-margin-left: 40px;
-	
-color: #b45b1c;
-}*/
-.weather-indicators{
-	display: inline-block;
+.city-list .item .location a{
+	margin-left:5px;
+	font-size: 16px;
 	color: white;
-	font-size: 21px;
-	line-height: 45px;
-	font-weight: 300;
-	width: 285px;
 }
-.weather-indicators span{
-	margin-right: 20px;
-}
-.location i, .weather-indicators i{
-	    color: #245998;
-	    margin-right: 5px;
-}
-.weather-indicators span b{
-	font-weight:600;
-}
- .city-list .item .location a{
-
-	
-font-size: 16px;
-	
-color: white;
-	
-margin-left:5px;
-}
-object{
+.city-list object{
 	display: inline-block;
 	height: 20px;
 }
-
-
+.city-list .forecast-examples{
+	margin-top: 20px;
+}
+/*tabs*/
 .tabs-links li{
 	display: inline-block;
 	padding: 10px;
@@ -263,7 +178,6 @@ object{
 	color:white;
 	cursor: pointer;
 }
-
 .tabs{
 	margin-top: 30px;
 	text-align: center;
@@ -272,122 +186,120 @@ object{
 	background: rgb(36, 89, 153);
 	color:white;
 }
-.current-wheather {
-    background: rgb(199, 212, 236);
-    width: 46%;
-    text-align: left;
-    padding: 2% 2%;
-    margin-top: 18px;
-    float: left;
+/*current-data*/
+.current-data{
+	display: inline-block;
+	margin-left: 3px;
+	font-size: 24px;
+	color: rgb(36, 89, 153);
+}
+/*current-wheather*/
+.current-wheather { 
+  float: left;
+  margin-top: 18px;
+  padding: 2% 2%;
+  width: 46%;
+  background: rgb(199, 212, 236);
+  text-align: left;  
 }
 .current-wheather .location .name {
-    display: inline-block;
-    font-size: 66px;
-    line-height: 66px;
-    color: #245998;
-    font-weight: 600;
+  display: inline-block;
+  font-size: 66px;
+  line-height: 66px;
+  color: #245998;
+  font-weight: 600;
 }
-
 .current-wheather .location .country{
+	margin-right: 10px;
 	font-weight: bold;
 	font-size: 25px;
 	color: white;
-	margin-right: 10px;
 }
 .current-wheather .location .country img{
-
 	margin-left:5px;
 }
 .current-wheather .location .map{
-
 	display: block;
-	font-size: 18px;
 	margin-left: 7px;
-
+	font-size: 18px;
 }
 .current-wheather .location .map a{
 	color:white;
 }
 .current-wheather .wheather-img{
-    float: left;
-    margin-right: 20px;
-    text-align: center;
-    font-size: 16px;
-    margin-top: 0px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color:#245998;
+  float: left;
+  margin-top: 0px;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:#245998;
 }
 .current-wheather .wheather-img p{
 	margin-top: -14px;
 }
 .current-wheather .time{
-
 	font-size: 36px;
 	color:white;
 }
 .current-wheather .time span{
 	line-height: 40px;
-	
 }
 .current-wheather .time i {
-    color: #245998;
-    font-size: 22px;
-    margin-left: 7px;
-    margin-right: 1px;
-    margin-bottom: -26px;
-    vertical-align: middle;
-    line-height: 40px;
-    margin-bottom: 3px;
+  margin-left: 7px;
+  margin-right: 1px;
+  margin-bottom: 3px;
+  vertical-align: middle;
+  line-height: 40px;
+  color: #245998;
+  font-size: 22px;
 }
 .current-wheather .temperature-block {
-    font-size: 75px;
-    float: left;
-    vertical-align: middle;
-    display: inline-block;
-    
-    line-height: 137px;
-    color:white;
+  float: left;
+  display: inline-block; 
+  vertical-align: middle;
+  font-size: 75px;
+  line-height: 137px;
+  color:white;
 }
 .current-wheather .temperature-block b{
 	font-size: 114px;
 }
-
 .current-wheather .temperature-block i {
-    font-size: 96px;
-    color: #245998;
+  font-size: 96px;
+  color: #245998;
 }
-
-.wheather-characteristics{
+.current-wheather .wheather-characteristics{
 	display: inline-block;
 }
-.wheather-characteristics .other{
+.current-wheather .wheather-characteristics .other{
 	display: inline-block;
-	/*text-align: center;*/
 	width: 100%;
 }
-.wheather-characteristics .other .item{
+.current-wheather .wheather-characteristics .other .item{
 	display: inline-block;
 	font-size: 46px;
 	margin-right: 12px;
 	color:white;
 }
-.wheather-characteristics .other .item i{
+.current-wheather .wheather-characteristics .other .item i{
 	color:#245998;
 	margin-right: 5px;	
 	margin-left: 15px;
 }
-.wheather-characteristics .other .item b{
+.current-wheather .wheather-characteristics .other .item b{
 	font-size: 50px;
 }
-.wheather-characteristics .other .item p {
-    text-align: center;
-    font-size: 16px;
-    margin-top: -10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color:#245998;
+.current-wheather .wheather-characteristics .other .item p {
+	margin-top: -10px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:#245998;
 }
+/*oneday-list*/
 .oneday-list{
 	float: left;
 	width: 48%;
@@ -396,15 +308,72 @@ object{
 .oneday-list .item, .oneday-list .weather-indicators{
 	width: 100%;
 }
-.city-list h2{
-	font-size: 35px;
-	color:#245999;
+/*forecast-list*/
+.forecast-list{
+	margin-top: 15px;
+	margin-bottom: 50px;
 }
-
-.forecast-examples{
-	margin-top: 20px;
+.forecast-list .item .time {
+  float: left;
+  padding: 0 10px;
+  line-height: 65px;
+  font-size: 21px;
+  color: #245998;
+  font-weight: bold;
 }
-
+.forecast-list .item{
+	display: block;
+	margin: 3px auto 0;
+	width: 500px;
+	height: 65px;
+}
+.forecast-list .date-sign {
+  display: block;
+  margin: 10px auto 5px;
+  padding: 10px 0;
+  width: 500px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: bold;
+  background: #193d69;
+}
+.forecast-list .weather-image{
+	height: 65px;
+	width: 90px;
+}
+.forecast-list .item .weather-image img {
+  width: 55px;
+  padding-top: 7px;
+}
+.forecast-list .weather-indicators {
+  line-height: 65px;
+}
+.forecast-list .weather-text-blocks { 
+  height: 65px;
+}
+.forecast-list .item:hover{
+	box-shadow: none;
+	cursor: default;
+}
+.weather-indicators{
+	display: inline-block;
+	width: 285px;
+	color: white;
+	font-size: 21px;
+	line-height: 45px;
+	font-weight: 300;
+}
+.weather-indicators span{
+	margin-right: 20px;
+}
+.weather-indicators span b{
+	font-weight:600;
+}
+.location i, .weather-indicators i{
+	margin-right: 5px;
+	color: #245998;    
+}
+/*footer*/
 footer{
 	width: 100%;
 	position: fixed;
@@ -422,51 +391,34 @@ footer span{
 	vertical-align: middle;
 }
 footer img{
-
 	width:14px;
 	margin: 0 5px 2px;
-vertical-align: middle;
+  vertical-align: middle;
 }
 footer a{
 	color:#fb852e;
 }
-
-.city-list{
-	margin-bottom: 60px;
-}
-.forecast-list{
-	margin-bottom: 10px;
-}
-
-.not-found{
-	font-size: 20px;
-	padding: 10px 0;
-}
-
-
 @media screen and (max-device-width: 1400px), screen and (max-width: 1400px){
 	.top-content {
-       height: 200px;
+    height: 200px;
 	}
-	.top-content span{
+	.top-content h2{
 		line-height: 200px;
 	}
 }
-
 @media screen and (max-device-width: 1200px), screen and (max-width: 1200px){
 	.wrap {
 		width: 100%;
 	}
 }
-
 @media screen and (max-device-width: 1100px), screen and (max-width: 1100px){
 	.current-wheather{
 		width: 66%;
 		margin-left: 15%;
 	}
 	.oneday-list {
-	    width: 70%;
-	    margin-left: 15%;
+	  width: 70%;
+	  margin-left: 15%;
 	}
 }
 @media screen and (max-device-width: 900px), screen and (max-width: 900px){
@@ -475,106 +427,104 @@ footer a{
 		margin-left: 10%;
 	}
 	.oneday-list {
-	    width: 80%;
-	    margin-left: 10%;
+	  width: 80%;
+	  margin-left: 10%;
 	}
 	.top-content {
     font-size: 24px;
 	}
 }
-
-@media screen and (max-device-width:640px), screen and (max-width:640px){
-	
+@media screen and (max-device-width:640px), screen and (max-width:640px){	
 	.header-logo h1 {
-	    font-size: 17px;
+	  font-size: 17px;
 	}
 	.header-logo img {
-	    width: 34px;
+	  width: 34px;
 	}
 	.top-content {
-	    font-size: 20px;
+	  font-size: 20px;
 	}
-	.top-content span {
+	.top-content h2 {
+		padding: 50px 30px;
 		line-height: 30px;
-	    padding: 50px 30px;
 	}
 	.search-field input[type="text"] {
-	    width: 50%;
-	    font-size: 18px;
-	    padding: 12px;
+	  width: 50%;
+	  padding: 12px;
+	  font-size: 18px;
 	}
 	.search-button {
-	    padding: 13px 12px 13px;
-	    font-size: 19px;
+	  padding: 13px 12px 13px;
+	  font-size: 19px;
 	}
 	.city-list .item {
-	    height: auto;
-	    width: 93%;
+	  height: auto;
+	  width: 93%;
 	}
 	.city-list .weather-image {
-	    width: 100%;
-	    height: 100px;
+	  width: 100%;
+	  height: 100px;
 	}
 	.city-list .weather-text-blocks{
 		height: auto;
 	}
 	.city-list .item .location {
-	    height: auto;
-	    width: 90%;
+	  height: auto;
+	  width: 90%;
 	}
 	.city-list .item:last-of-type{
 		margin-bottom: 20px;
 	}
 	.city-list h2 {
-	    font-size: 22px;
+	  font-size: 22px;
 	}
-
 	.current-wheather{
 		width: 92%;
 		margin: 2% 2%;
 	}
 	.current-wheather .location .name {
-	    font-size: 33px;
-	    line-height: 40px;
+	  font-size: 33px;
+	  line-height: 40px;
 	}
 	.current-wheather .wheather-img {
 		margin-right: 0;
-	    float: none;
-	    text-align: center;
+	  float: none;
+	  text-align: center;
 	}
 	.current-wheather .temperature-block {
-	    float: none;
-	    text-align: center;
-	    width: 100%;
+	  float: none;
+	  width: 100%;
+	  text-align: center;
 	}
 	.oneday-list, .forecast-list{
 		width: 96%;
+	}
+	.oneday-list .item, .forecast-list .item{
+		display: inline-block;
+	  height: auto;
+	  width: 100%;  
+	}
+	.oneday-list .weather-image, .forecast-list .weather-image{
+	  width: 50%;
+	  height: 70px;
+	}
+	.oneday-list .weather-indicators, .forecast-list .weather-indicators{
+		line-height: 40px;
+	}
+	.oneday-list .item .time, .forecast-list .item .time{
+	  width: 50%;
+	  padding: 0;
+	  font-size: 27px;
 	}
 	.forecast-list .item:last-of-type{
 		margin-bottom: 5px;
 	}
 	.forecast-list{
 		margin-left: 2%;
+		margin-bottom:60px;
 	}
 	.forecast-list .date-sign {
-	    width: 100%;
-	}
-	.oneday-list .item .time, .forecast-list .item .time{
-		font-size: 27px;
-	    width: 50%;
-	    padding: 0;
-	}
-	.oneday-list .item, .forecast-list .item{
-	    height: auto;
-	    width: 100%;
-	    display: inline-block;
-	}
-	.oneday-list .weather-image, .forecast-list .weather-image{
-	    width: 50%;
-	    height: 70px;
-	}
-	.oneday-list .weather-indicators, .forecast-list .weather-indicators{
-		line-height: 40px;
+	  width: 100%;
 	}
 	.tabs-links li, .forecast-list li{
 		margin: 0 10px 10px;
