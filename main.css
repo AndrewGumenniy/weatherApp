@@ -430,7 +430,7 @@ footer a{
 	  width: 80%;
 	  margin-left: 10%;
 	}
-	.top-content {
+	.top-content h2{
     font-size: 24px;
 	}
 }
@@ -441,13 +441,10 @@ footer a{
 	.header-logo img {
 	  width: 34px;
 	}
-	.top-content {
-	  font-size: 20px;
-	}
 	.top-content h2 {
 		padding: 50px 30px;
 		line-height: 30px;
-		font-size: 24px;
+		font-size: 21px;
 	}
 	.search-field input[type="text"] {
 	  width: 50%;
