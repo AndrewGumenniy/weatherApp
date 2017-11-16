@@ -501,11 +501,10 @@ footer a{
 	.search-field input[type="text"] {
 	    width: 50%;
 	    font-size: 18px;
-	    padding: 0 12px;
-      height: 45px;
+	    padding: 12px;
 	}
 	.search-button {
-	    height:49px;
+	    padding: 13px 12px 13px;
 	    font-size: 19px;
 	}
 	.city-list .item {
