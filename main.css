@@ -81,7 +81,6 @@ header a{
 }
 .search-button {
     float: left;
-    margin-left: -7px;
     padding: 0 12px;
     height: inherit;
     background: rgb(36, 89, 153);
