@@ -451,6 +451,9 @@ footer a{
 	  line-height: 30px;
 	  font-size: 21px;
 	}
+	.search-field{
+	  width: 90%;	
+	}
 	.search-field input[type="text"] {
 	  width: 65%;
 	  font-size: 18px;
