@@ -43,7 +43,7 @@ weatherApp.controller('mainPageController',
         $scope.cityArray.push($scope.exampleCityData);
       }).
       catch(function(response) {
-        $scope.cityData = response.data;
+        $scope.exampleCityData = response.data;
       });
     }
     var cities = ["Dnipropetrovsk", "Kiev"];
@@ -52,4 +52,3 @@ weatherApp.controller('mainPageController',
       $scope.examplesCity();
     }
 }]);
-
