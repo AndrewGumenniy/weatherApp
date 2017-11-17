@@ -16,7 +16,6 @@ weatherApp.controller('cityForecastController',
     $http(request)
     .then(function(response) { 
       $scope.currentCityData = response.data;
-      console.log($scope.currentCityData);
     }).
     catch(function(response) {
       $scope.currentCityData = response.data;
@@ -38,7 +37,6 @@ weatherApp.controller('cityForecastController',
       $scope.cityForecast = response.data; 
     }).
     catch(function(response) {
-    	console.log($scope.cityForecast);
       $scope.cityForecast = response.data;
     });
     // today data and time
